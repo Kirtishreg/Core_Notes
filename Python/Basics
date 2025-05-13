@@ -1,1 +1,168 @@
+Basic Code - print("Hello, Keerthi!")
+
+Indentation refers to the spaces at the beginning of a code line. Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.
+Block Code: Python uses indentation to indicate a block of code.
+if 5 > 2:
+  print("Five is greater than two!")
+
+Variables: Variables are containers for storing data values. A variable is created the moment you first assign a value to it. 
+x = 5                
+y = "John"
+print(x)
+print(y)
+
+x = str(3)    # x will be '3'
+y = int(3)    # y will be 3
+z = float(3)  # z will be 3.0
+
+The Python print() function is often used to output variables. 
+x = "Python is awesome"
+print(x)
+
+Variables that are created outside of a function (as in all of the examples in the previous pages) are known as global variables. Global variables can be used by everyone, both inside of functions and outside.
+x = "awesome"
+def myfunc():
+  print("Python is " + x)
+myfunc()
+
+Python has the following data types built-in by default, in these categories:
+Text Type:	str
+Numeric Types:	int, float, complex
+Sequence Types:	list, tuple, range
+Mapping Type:	dict
+Set Types:	set, frozenset
+Boolean Type:	bool
+Binary Types:	bytes, bytearray, memoryview
+None Type:	NoneType
+You can get the data type of any object by using the type() function: x = 5 -- print(type(x))
+
+Slice: You can return a range of characters by using the slice syntax. Specify the start index and the end index, separated by a colon, to return a part of the string.
+b = "Hello, World!" -- print(b[2:5]),  b = "Hello, World!" -- print(b[:5])
+
+Modify Strings: Python has a set of built-in methods that you can use on strings. The upper() method returns the string in upper case: a = "Hello, World!" -- print(a.upper())
+The lower() method returns the string in lower case: a = "Hello, World!" -- print(a.lower())
+The strip() method removes any whitespace from the beginning or the end: a = " Hello, World! " -- print(a.strip()) # returns "Hello, World!"
+
+Concatenation: Merge variable a with variable b into variable c:
+a = "Hello"
+b = "World"
+c = a + b
+print(c)
+
+Boolean Values: When you compare two values, the expression is evaluated and Python returns the Boolean answer: 
+a = 200
+b = 33
+if b > a:
+  print("b is greater than a")
+else:
+  print("b is not greater than a")
+
+List: Lists are used to store multiple items in a single variable. 
+thislist = ["apple", "banana", "cherry", "apple", "cherry"]
+print(thislist)
+
+List Methods: Python has a set of built-in methods that you can use on lists.
+append()	Adds a single element to the end of the list.	lst.append(10)
+extend()	Adds all elements of an iterable to the list.	lst.extend([1, 2, 3])
+insert(index, item)	Inserts an item at a specified position.	lst.insert(2, 99)
+remove(item)	Removes the first occurrence of the item.	lst.remove(3)
+pop([index])	Removes and returns element at index (default: last).	lst.pop()
+clear()	Removes all items from the list.	lst.clear()
+index(item)	Returns the index of the first occurrence of item.	lst.index(5)
+count(item)	Returns the number of occurrences of item.	lst.count(2)
+sort(key=None, reverse=False)	Sorts the list in ascending order (in-place).	lst.sort()
+reverse()	Reverses the list in-place.	lst.reverse()
+copy()	Returns a shallow copy of the list.	new_lst = lst.copy()
+
+Tuples: Tuples are used to store multiple items in a single variable. A tuple is a collection which is ordered and unchangeable
+thistuple = ("apple", "banana", "cherry")
+print(thistuple)
+
+Sets: Sets are used to store multiple items in a single variable. A set is a collection which is unordered, unchangeable*, and unindexed.
+thisset = {"apple", "banana", "cherry"}
+for x in thisset:
+  print(x)
+
+Dictionary: Dictionaries are used to store data values in key:value pairs. A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["brand"])
+
+Conditions & If statements: Python supports the usual logical conditions from mathematics:
+Equals: a == b
+Not Equals: a != b
+Less than: a < b
+Less than or equal to: a <= b
+Greater than: a > b
+Greater than or equal to: a >= b
+These conditions can be used in several ways, most commonly in "if statements" and loops.
+An "if statement" is written by using the if keyword.
+a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+
+While loop: With the while loop we can execute a set of statements as long as a condition is true. 
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+
+For loop: The for loop in Python is used to iterate over a sequence (like a list, tuple, string, dictionary, or range).
+fruits = ['apple', 'banana', 'cherry']
+for fruit in fruits:
+    print(fruit)
+
+Arrays: Arrays are used to store multiple values in one single variable: cars = ["Ford", "Volvo", "BMW"], 
+Use the len() method to return the length of an array (the number of elements in an array). x = len(cars)
+
+Class: A blueprint for creating objects
+Object: An instance of a class
+class Person:
+    def __init__(self, name, age):  # Constructor
+        self.name = name
+        self.age = age
+    def greet(self):
+        print(f"Hello, I am {self.name} and I am {self.age} years old.")
+# Create object
+p1 = Person("Alice", 30)
+p1.greet()  # Output: Hello, I am Alice and I am 30 years old.
+
+Inheritance: Inheritance allows a class (child) to inherit methods and properties from another class (parent).
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+class Dog(Animal):  # Dog inherits from Animal
+    def bark(self):
+        print("Dog barks")
+d = Dog()
+d.speak()  # Inherited method
+d.bark()   # Own method
+----Single: One parent, one child
+Multilevel: Child → Parent → Grandparent
+Multiple: Child inherits from multiple parents
+Hierarchical: One parent → Multiple children
+
+Polymorphism: Polymorphism means many forms — the same method name can behave differently in different classes.
+class Bird:
+    def fly(self):
+        print("Bird can fly")
+class Airplane:
+    def fly(self):
+        print("Airplane can fly")
+def lift_off(flyer):
+    flyer.fly()
+b = Bird()
+a = Airplane()
+lift_off(b)  # Bird can fly
+lift_off(a)  # Airplane can fly
+
+Math: The min() and max() functions can be used to find the lowest or highest value in an iterable:
+x = min(5, 10, 25)
+y = max(5, 10, 25)
+print(x)
+print(y)
 
