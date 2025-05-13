@@ -1,1 +1,92 @@
+NumPy is a Python library.
+NumPy is used for working with arrays.
+NumPy is short for "Numerical Python".
+The array object in NumPy is called ndarray, it provides a lot of supporting functions that make working with ndarray very easy.
+
+
+Creating a numpy array:
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)
+print(type(arr))
+
+To create an ndarray, we can pass a list, tuple or any array-like object into the array() method, and it will be converted into an ndarray:
+import numpy as np
+arr = np.array((1, 2, 3, 4, 5))
+print(arr)
+
+Array indexing: import numpy as np
+arr = np.array([1, 2, 3, 4])
+print(arr[0])
+
+Array slicing: Slicing in python means taking elements from one given index to another given index.
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5, 6, 7])
+print(arr[1:5]) ; print(arr[4:]) ; print(arr[:4]) ; print(arr[1:5:2]) ; print(arr[::2]) ; print(arr[1, 1:4])
+
+Data Types: NumPy has some extra data types, and refer to data types with one character, like i for integers, u for unsigned integers etc.
+Below is a list of all data types in NumPy and the characters used to represent them.
+i - integer
+b - boolean
+u - unsigned integer
+f - float
+c - complex float
+m - timedelta
+M - datetime
+O - object
+S - string
+U - unicode string
+V - fixed chunk of memory for other type ( void )
+import numpy as np
+arr = np.array(['apple', 'banana', 'cherry'])
+print(arr.dtype)
+
+Copy & View Arrays: The copy is a new array, and the view is just a view of the original array.
+The copy owns the data and any changes made to the copy will not affect original array, and any changes made to the original array will not affect the copy.
+The view does not own the data and any changes made to the view will affect the original array, and any changes made to the original array will affect the view.
+--copy: arr = np.array([1, 2, 3, 4, 5])
+x = arr.copy()
+arr[0] = 42
+print(arr)
+print(x)
+--View: arr = np.array([1, 2, 3, 4, 5])
+x = arr.view()
+arr[0] = 42
+print(arr)
+print(x)
+
+Shape: NumPy arrays have an attribute called shape that returns a tuple with each index having the number of corresponding elements.
+import numpy as np
+arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+print(arr.shape)
+
+Re-Shape: Reshaping means changing the shape of an array. By reshaping we can add or remove dimensions or change number of elements in each dimension.
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+newarr = arr.reshape(4, 3)
+print(newarr)
+
+Joinings: Joining means putting contents of two or more arrays in a single array. We pass a sequence of arrays that we want to join to the concatenate() function, along with the axis. If axis is not explicitly passed, it is taken as 0.
+import numpy as np
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+arr = np.concatenate((arr1, arr2))
+print(arr)
+
+Splitting: Splitting is reverse operation of Joining. We use array_split() for splitting arrays, we pass it the array we want to split and the number of splits.
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5, 6])
+newarr = np.array_split(arr, 3)
+print(newarr)
+
+Searching: To search an array, use the where() method.
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5, 4, 4])
+x = np.where(arr == 4)
+print(x)
+
+Sort: Sorting means putting elements in an ordered sequence. The NumPy ndarray object has a function called sort(), that will sort a specified array.
+import numpy as np
+arr = np.array([3, 2, 0, 1])
+print(np.sort(arr))
 
