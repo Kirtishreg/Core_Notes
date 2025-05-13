@@ -1,1 +1,25 @@
+Pandas is a Python library. Pandas is used to analyze data.
+It has functions for analyzing, cleaning, exploring, and manipulating data.
+Pandas allows us to analyze big data and make conclusions based on statistical theories.
+Pandas can clean messy data sets, and make them readable and relevant. Relevant data is very important in data science.
+Pandas are also able to delete rows that are not relevant, or contains wrong values, like empty or NULL values. This is called cleaning the data.
+
+import pandas as pd
+df = pd.read_csv('data.csv')
+print(df.to_string()) 
+
+import pandas
+mydataset = {
+  'cars': ["BMW", "Volvo", "Ford"],
+  'passings': [3, 7, 2]
+}
+myvar = pandas.DataFrame(mydataset)
+print(myvar)
+
+Pandas Series: A Pandas Series is like a column in a table. It is a one-dimensional array holding data of any type.
+import pandas as pd
+a = [1, 7, 2]
+myvar = pd.Series(a)
+print(myvar)
+
 
