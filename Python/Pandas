@@ -5,7 +5,7 @@ Pandas can clean messy data sets, and make them readable and relevant. Relevant 
 Pandas are also able to delete rows that are not relevant, or contains wrong values, like empty or NULL values. This is called cleaning the data.
 
 import pandas as pd
-df = pd.read_csv('data.csv')
+df = pd.read_ ('data.csv')
 print(df.to_string()) 
 
 import pandas
@@ -22,4 +22,89 @@ a = [1, 7, 2]
 myvar = pd.Series(a)
 print(myvar)
 
+Dataframe: A Pandas DataFrame is a 2 dimensional data structure, like a 2 dimensional array, or a table with rows and columns.
+import pandas as pd
+data = {
+  "calories": [420, 380, 390],
+  "duration": [50, 40, 45]
+}
+#load data into a DataFrame object:
+df = pd.DataFrame(data)
+print(df)
 
+To Locate row: print(df.loc[0])
+Index naming: df = pd.DataFrame(data, index = ["day1", "day2", "day3"])
+To load a csv file: df = pd.read_csv('data.csv')
+checking max return rows: print(pd.options.display.max_rows) 
+To read files of json: df = pd.read_json('data.json'), print(df.to_string()) 
+
+Viewing the data: The head() method returns the headers and a specified number of rows, starting from the top.
+import pandas as pd
+df = pd.read_csv('data.csv')
+print(df.head(10))
+
+The tail() method returns the headers and a specified number of rows, starting from the bottom. print(df.tail()) 
+The DataFrames object has a method called info(), that gives you more information about the data set. print(df.info()) 
+
+Data Cleaning: Data cleaning means fixing bad data in your data set.
+Bad data could be: Empty cells, Data in wrong format, Wrong data, Duplicates
+
+Empty cells can potentially give you a wrong result when you analyze data.
+One way to deal with empty cells is to remove rows that contain empty cells.
+This is usually OK, since data sets can be very big, and removing a few rows will not have a big impact on the result.
+import pandas as pd
+df = pd.read_csv('data.csv')
+new_df = df.dropna()
+print(new_df.to_string())
+If you want to change the original DataFrame, use the inplace = True argument:df = pd.read_csv('data.csv'), df.dropna(inplace = True)
+
+Replacing empty values: This way you do not have to delete entire rows just because of some empty cells. The fillna() method allows us to replace empty cells with a value:
+import pandas as pd
+df = pd.read_csv('data.csv')
+df.fillna(130, inplace = True)
+
+Replacing using mean, meadian, mode: A common way to replace empty cells, is to calculate the mean, median or mode value of the column.
+Pandas uses the mean() median() and mode() methods to calculate the respective values for a specified column:
+import pandas as pd
+df = pd.read_csv('data.csv')
+x = df["Calories"].mean() -- x = df["Calories"].median() -- x = df["Calories"].mode()[0]
+df.fillna({"Calories": x}, inplace=True)
+
+Data of wrong format: Cells with data of wrong format can make it difficult, or even impossible, to analyze data.
+To fix it, you have two options: remove the rows, or convert all cells in the columns into the same format.
+Pandas has a to_datetime() method for this: df = pd.read_csv('data.csv'), df['Date'] = pd.to_datetime(df['Date'], format='mixed')
+
+fixing wrong data: "Wrong data" does not have to be "empty cells" or "wrong format", it can just be wrong, like if someone registered "199" instead of "1.99".
+Duplicate rows are rows that have been registered more than one time. The duplicated() method returns a Boolean values for each row:
+print(df.duplicated())
+
+The corr() method calculates the relationship between each column in your data set. df.corr()
+
+Plotting: Pandas uses the plot() method to create diagrams. We can use Pyplot, a submodule of the Matplotlib library to visualize the diagram on the screen.
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv('data.csv')
+df.plot()
+plt.show()
+
+Scatter plotting: Specify that you want a scatter plot with the kind argument:
+kind = 'scatter'
+A scatter plot needs an x- and a y-axis.
+In the example below we will use "Duration" for the x-axis and "Calories" for the y-axis.
+Include the x and y arguments like this:
+x = 'Duration', y = 'Calories'
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv('data.csv')
+df.plot(kind = 'scatter', x = 'Duration', y = 'Calories')
+plt.show()
+
+Histogram: A histogram needs only one column. A histogram shows us the frequency of each interval.
+df["Duration"].plot(kind = 'hist')
+
+fillna()	Fill missing values
+dropna()	Remove missing values
+replace()	Replace specific values
+apply()	Apply custom functions
+astype()	Convert data types
+str.strip() / .lower()	Clean string columns
