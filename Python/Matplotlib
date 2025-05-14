@@ -1,1 +1,124 @@
+Pyplot
+Most of the Matplotlib utilities lies under the pyplot submodule, and are usually imported under the plt
+import matplotlib.pyplot as plt
+
+Sample: import matplotlib.pyplot as plt
+import numpy as np
+xpoints = np.array([0, 6])
+ypoints = np.array([0, 250])
+plt.plot(xpoints, ypoints)
+plt.show()
+
+Plotting: The plot() function is used to draw points (markers) in a diagram. By default, the plot() function draws a line from point to point.
+The function takes parameters for specifying points in the diagram. Parameter 1 is an array containing the points on the x-axis.
+Parameter 2 is an array containing the points on the y-axis.
+
+Marker: You can use the keyword argument marker to emphasize each point with a specified marker:
+import matplotlib.pyplot as plt
+import numpy as np
+ypoints = np.array([3, 8, 1, 10]) 
+plt.plot(ypoints, marker = 'o') --- plt.plot(ypoints, marker = '*')
+plt.show()
+
+Linestyle: You can use the keyword argument linestyle, or shorter ls, to change the style of the plotted line:
+import matplotlib.pyplot as plt
+import numpy as np
+ypoints = np.array([3, 8, 1, 10])
+plt.plot(ypoints, linestyle = 'dotted') --- plt.plot(ypoints, linestyle = 'dashed')
+plt.show()
+
+creatig labels for plot: With Pyplot, you can use the xlabel() and ylabel() functions to set a label for the x- and y-axis.
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
+y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+plt.plot(x, y)
+plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+plt.show()
+
+Title for a plot: With Pyplot, you can use the title() function to set a title for the plot.
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.array([80, 85, 90, 95, 100, 105, 110, 115, 120, 125])
+y = np.array([240, 250, 260, 270, 280, 290, 300, 310, 320, 330])
+plt.plot(x, y)
+plt.title("Sports Watch Data")
+plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+plt.show()
+
+For fonting dict: font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+plt.title("Sports Watch Data", fontdict = font1)
+plt.xlabel("Average Pulse", fontdict = font2)
+plt.ylabel("Calorie Burnage", fontdict = font2)
+
+for title position: plt.title("Sports Watch Data", loc = 'left')
+
+Grid: you can use the grid() function to add grid lines to the plot.
+plt.plot(x, y) -- plt.grid()
+
+Subplot: With the subplot() function you can draw multiple plots in one figure
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+plt.subplot(1, 2, 1)
+plt.plot(x,y)
+
+Creating scatter plots: The scatter() function plots one dot for each observation. It needs two arrays of the same length, one for the values of the x-axis, and one for values on the y-axis
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+plt.scatter(x, y)
+plt.show()
+
+Bar Graphs: you can use the bar() function to draw bar graphs
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.array(["A", "B", "C", "D"])
+y = np.array([3, 8, 1, 10])
+plt.bar(x,y)
+plt.show()
+The bar() function takes arguments that describes the layout of the bars.
+x = ["APPLES", "BANANAS"]
+y = [400, 350]
+plt.bar(x, y)
+
+Histogram: A histogram is a graph showing frequency distributions. It is a graph showing the number of observations within each given interval.
+we use the hist() function to create histograms.
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.random.normal(170, 10, 250)
+plt.hist(x)
+plt.show() 
+
+Pie charts: you can use the pie() function to draw pie charts:
+import matplotlib.pyplot as plt
+import numpy as np
+y = np.array([35, 25, 25, 15])
+plt.pie(y)
+plt.show() 
+
+For lableling: plt.pie(y, labels = mylabels)
+The explode parameter, if specified, and not None, must be an array with one value for each wedge.
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+myexplode = [0.2, 0, 0, 0]
+plt.pie(y, labels = mylabels, explode = myexplode)
+
+Add a shadow to the pie chart by setting the shadows parameter to True: plt.pie(y, labels = mylabels, explode = myexplode, shadow = True)
+The colors parameter, if specified, must be an array with one value for each wedge: plt.pie(y, labels = mylabels, colors = mycolors)
+Colours: 'r' - Red
+'g' - Green
+'b' - Blue
+'c' - Cyan
+'m' - Magenta
+'y' - Yellow
+'k' - Black
+'w' - White
+
+To add a list of explanation for each wedge, use the legend() function: plt.legend()
+
 
