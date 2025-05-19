@@ -13,4 +13,6 @@ This repository contains curated notes, tutorials, and reference materials for t
 
 📈 Tableau
 
+❄️ Snowflake 
+
 I'll update it more as i go-through!
