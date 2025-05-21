@@ -9,6 +9,8 @@ This repository contains curated notes, tutorials, and reference materials for t
 
 🔥 PySpark
 
+💻 Databricks
+
 📊 Power BI
 
 📈 Tableau
