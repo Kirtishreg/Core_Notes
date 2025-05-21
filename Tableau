@@ -1,0 +1,68 @@
+Tableau is a powerful data visualization and business intelligence (BI) tool used to analyze, visualize, and share insights from data. 
+It's widely used by data analysts, business users, and data scientists to create interactive dashboards and reports.
+
+| Feature                 | Description                                                                                                                            |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **Connect to Data**     | Connects to files (Excel, CSV), databases (SQL, Oracle), cloud services (Google Sheets, AWS, Azure), and platforms like **Databricks** |
+| **Data Preparation**    | Clean, join, filter, and pivot data inside Tableau                                                                                     |
+| **Visualize Data**      | Create charts, maps, dashboards, and stories                                                                                           |
+| **Interact with Views** | Use filters, parameters, tooltips, and drill-downs                                                                                     |
+| **Share & Publish**     | Share dashboards on Tableau Server, Tableau Online, or Tableau Public                                                                  |
+
+🧰 Common Use Cases
+Sales and marketing dashboards
+KPI monitoring
+Customer analytics
+Finance and operations reports
+Machine learning results visualization
+
+🛠️ Tableau Working Example (Using Sample Data)
+📥 1. Connect to Data
+Open Tableau Desktop or Tableau Public
+Click "Connect" → choose CSV, Excel, or a database
+Example: Load sales_data.csv
+
+🧹 2. Prepare the Data
+Drag and drop fields into the data model
+Clean nulls or rename columns if needed
+
+📈 3. Build a Visualization
+Example: Show total sales by region
+Drag Region to Columns
+Drag Sales to Rows
+Choose Bar Chart from the "Show Me" panel
+
+🛠️ 4. Add Filters and Interactions
+Drag Year to the Filter shelf
+Add Category to Color to break it down further
+
+🔄 Tableau + Code Integration
+While Tableau itself is a no-code tool, you can integrate it with code and advanced tools:
+
+🔥 Use Tableau with Python (TabPy)
+Install TabPy (Tableau Python Server)
+Run Python scripts from Tableau calculated fields
+Example (Python in Tableau):
+python
+Copy
+Edit
+SCRIPT_REAL("
+import numpy as np
+return np.log(_arg1)
+", SUM([Sales]))
+
+📡 Use Tableau with R (Rserve)
+Use statistical models directly in Tableau using R
+
+🔗 Tableau + Databricks Example
+In Tableau: Connect to Databricks SQL endpoint
+
+Write custom SQL queries to pull aggregated data
+Build visuals like trend lines, KPIs, or heatmaps
+
+🧩 Summary
+Tool	Role
+Tableau	Visualize and analyze data easily
+SQL	Query structured data
+Python (TabPy)	Advanced analytics & ML inside Tableau
+Databricks	Data transformation and storage
