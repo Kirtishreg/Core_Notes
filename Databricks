@@ -1,0 +1,34 @@
+Databricks is a cloud-based data platform designed to help data teams collaborate on large-scale data engineering, data science, machine learning, and analytics. 
+It was founded by the creators of Apache Spark and makes it much easier to run and scale Spark-based workloads in the cloud.
+
+| Category            | Description                                                                                                 |
+| ------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Managed Spark**   | No need to install or manage Apache Spark clusters — Databricks manages the infrastructure.                 |
+| **Notebooks**       | Interactive, collaborative notebooks that support **PySpark**, **SQL**, **Scala**, **R**, and **Markdown**. |
+| **Data Lakehouse**  | Combines features of a data lake and a data warehouse using the **Delta Lake** format.                      |
+| **Auto Scaling**    | Automatically scales clusters up or down based on load.                                                     |
+| **Job Scheduling**  | Create, schedule, and monitor data pipelines and jobs.                                                      |
+| **ML & AI Support** | Built-in tools for model training, hyperparameter tuning, and experiment tracking (MLflow).                 |
+| **Integrations**    | Integrates with AWS, Azure, Google Cloud, Kafka, Snowflake, Power BI, Tableau, and more.                    |
+
+
+🔗 Databricks Supports Multiple Languages
+PySpark (Python API for Spark)
+Scala (native Spark language)
+SQL (for querying and transformations)
+R (data science & statistical computing)
+
+💡 Common Use Cases
+ETL/Data Engineering: Clean and transform raw data into analytics-ready formats.
+Machine Learning: Train and deploy ML models at scale.
+Business Intelligence: Query large datasets using SQL and visualize insights.
+Real-time Analytics: Process streaming data (e.g., IoT, logs) in near real-time.
+
+🛠️ Example Workflow in Databricks
+Ingest raw data from a cloud storage bucket (e.g., S3, Azure Data Lake).
+Write a PySpark script to clean and transform the data.
+Store results in a Delta Lake table.
+Use SQL notebooks to generate reports.
+Train an ML model using Databricks ML and track experiments with MLflow.
+
+
