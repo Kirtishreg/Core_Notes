@@ -1,0 +1,127 @@
+Power BI is a business analytics and data visualization tool from Microsoft that enables users to:
+
+Connect to various data sources
+Transform and model data
+Create interactive dashboards and reports
+Share insights across organizations
+
+It is a core tool in the data engineering and BI stack—especially in Azure ecosystems—used to convert raw data into actionable insights.
+
+ Example Workflow:
+Data Ingestion
+Source: SQL Server, Azure Synapse, Excel, APIs, SharePoint, etc.
+Power BI connects directly or via Azure Data Factory/Dataflows.
+
+Data Preparation
+Use Power Query (ETL tool in Power BI) to clean, filter, merge, and transform data.
+
+Modeling
+Create relationships between tables, define KPIs, build calculated columns using DAX.
+
+Visualization
+Drag-and-drop interface for building:
+
+Bar/line charts
+Maps
+Gauges
+Tables
+Slicers and filters
+Publishing & Sharing
+Publish to Power BI Service
+Share dashboards via links, embed in Teams, or schedule email reports
+Automation & Refresh
+Set up data refresh schedules
+Use Power BI Gateway to keep on-prem data up-to-date in the cloud
+
+Power BI Data Sources
+Cloud: Azure Synapse, BigQuery, Snowflake, Redshift
+Databases: SQL Server, MySQL, PostgreSQL, Oracle
+Files: Excel, CSV, JSON, XML
+APIs: REST, OData, SharePoint
+Services: Salesforce, Google Analytics, Dynamics 365
+
+CHARTS: 
+🟦 1. Bar / Column Chart
+✅ Use Case: Compare categories (e.g., sales by product)
+🛠 Steps:
+Load your data (e.g., Product and Sales columns).
+Drag a bar chart from the Visualizations pane.
+Drag Product Name to Axis.
+Drag Sales to Values.
+Sort by value if needed (click the ellipsis in top-right corner).
+Format colors, axis labels, and tooltips as desired.
+
+📈 2. Line Chart
+✅ Use Case: Show trends over time (e.g., revenue over months)
+🛠 Steps:
+Use a dataset with date and value columns (e.g., OrderDate, Revenue).
+Insert a Line Chart.
+Drag OrderDate to Axis (use hierarchy: year, month).
+Drag Revenue to Values.
+Use filters to limit to a specific year or region.
+Enable data labels for clarity.
+
+📊 3. Pie / Donut Chart
+✅ Use Case: Show proportion (e.g., sales share by region)
+🛠 Steps:
+Add a Pie Chart from the pane.
+Drag Region to Legend.
+Drag Sales to Values.
+Choose whether to display labels, percentages, or values.
+Use color settings to differentiate slices.
+🔁 Donut Chart: Similar steps—just use the donut variant.
+
+📍 4. Map (Filled or Bubble)
+✅ Use Case: Geospatial analysis (e.g., customers by city)
+🛠 Steps:
+Ensure you have geographic fields (like Country, City, or Coordinates).
+Add a Map or Filled Map visual.
+Drag Location (e.g., City) to Location field.
+Drag a metric (e.g., Sales) to Size or Values.
+Format map style (light, dark, road view).
+
+💡 5. Card (KPI or Single Value)
+✅ Use Case: Show single metric (e.g., Total Profit)
+🛠 Steps:
+Add a Card Visual.
+Drag a measure like SUM(Profit) into it.
+Add conditional formatting or data labels as needed.
+Use DAX to create custom KPIs like:
+TotalProfit = SUM(Sales[Profit])
+
+📊 6. Table / Matrix
+✅ Use Case: Show detailed data (e.g., revenue by category and region)
+🛠 Steps:
+Choose Table or Matrix visual.
+Drag multiple fields (Category, Region, Sales) to Rows and Values.
+Use conditional formatting for highlights (top performers, red/yellow/green).
+Enable subtotals and row expansion in Matrix view.
+
+📐 7. Gauge / KPI
+✅ Use Case: Show progress toward a goal
+🛠 Steps for Gauge:
+Insert a Gauge Visual.
+Drag a measure like Total Sales to Value.
+Set Min, Target, and Max values (can use DAX).
+SalesTarget = 1000000
+Steps for KPI:
+Use KPI Visual.
+Set Indicator = Total Sales.
+Set Target = Sales Target measure.
+Add Trend Axis (e.g., Order Date) for context.
+
+📦 8. Slicer
+✅ Use Case: Add interactivity (e.g., filter reports by region or date)
+🛠 Steps:
+Insert a Slicer visual.
+Drag a field like Region or OrderDate to it.
+Choose dropdown, list, or between-slider view.
+Test by selecting values—other visuals will update accordingly.
+
+Advanced Visualizations
+| Goal            | Visualization Type           | Tips                                |
+| --------------- | ---------------------------- | ----------------------------------- |
+| Forecasting     | Line Chart with Forecast     | Enable forecast from Analytics pane |
+| Ranking         | Bar Chart with DAX `RANKX`   | Show top N categories               |
+| Trend deviation | Combo chart (bar + line)     | Compare actual vs. goal             |
+| Time comparison | Matrix with Year-on-Year DAX | Use time-intelligence functions     |
